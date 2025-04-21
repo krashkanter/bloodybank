@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Bank Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Blood Bank Dashboard</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donor.html">Donors</a></li>
+        <li><a href="patient.php">Patients</a></li>
+        <li><a href="hospital.php">Hospitals</a></li>
+        <li><a href="blood-bank.html" class="active">Blood Bank</a></li>
+        <li><a href="stock-view.php">Stock</a></li>
+        <li><a href="report.php">Report</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="info">
+    <h2>Overview</h2>
+    <div class="card-container">
+      <?php include("php/blood-bank-dashboard.php"); ?>
+    </div>
+  </main>
+
+  <section class="info">
+    <h2>Quick Actions</h2>
+    <div class="card-container">
+      <div class="card">
+        <a class="button" href="blood-entry.html">➕ Add Blood Entry</a>
+      </div>
+      <div class="card">
+        <a class="button" href="stock-view.php">📦 View Stock</a>
+      </div>
+      <div class="card">
+        <a class="button" href="report.php">📊 Generate Report</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Blood Bank Management System</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

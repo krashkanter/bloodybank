@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register as Donor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Register as Donor</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donor.html">View Donors</a></li>
+        <li><a href="hospital-request.html">Hospital Request</a></li>
+        <li><a href="stock-view.php">Stock View</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <h2>Donor Registration Form</h2>
+    <form action="php/submit-donor.php" method="POST">
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required min="18" max="65">
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="blood_group">Blood Group:</label>
+      <select id="blood_group" name="blood_group" required>
+        <option value="">--Select--</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="phone">Contact Number:</label>
+      <input type="tel" id="phone" name="phone" maxlength="10" pattern="[6-9]{1}[0-9]{9}" required
+             placeholder="e.g. 9876543210">
+
+      <label for="disease">Any Disease:</label>
+      <input type="text" id="disease" name="disease" placeholder="e.g. None or Diabetes">
+
+      <label for="donation_date">Date of Donation:</label>
+      <input type="date" id="donation_date" name="donation_date" required>
+
+      <label for="quantity">Quantity Donated (ml):</label>
+      <input type="number" id="quantity" name="quantity" required min="100" step="50">
+
+      <label for="blood_bank_id">Blood Bank ID:</label>
+      <input type="number" id="blood_bank_id" name="blood_bank_id" required>
+
+      <button type="submit">Register Donor</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Blood Bank System</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

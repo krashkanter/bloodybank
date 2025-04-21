@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - Blood Bank</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="donor.html">Donors</a></li>
+        <li><a href="hospital.php">Hospitals</a></li>
+        <li><a href="stock-view.php">Stock</a></li>
+        <li><a href="report.php">Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Get in Touch</h2>
+      <form action="php/send-message.php" method="POST" class="form-grid">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <section class="contact-info">
+      <h2>Contact Details</h2>
+      <p><strong>Blood Bank Headquarters</strong></p>
+      <p>123 Health Avenue, City Name, State, PIN</p>
+      <p>📞 Phone: +91-9876543210</p>
+      <p>✉️ Email: support@bloodbank.org</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Blood Bank Management System</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Bank Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 4C32 4 12 28 12 42C12 53.046 20.954 62 32 62C43.046 62 52 53.046 52 42C52 28 32 4 32 4Z" fill="#8B0000" stroke="#400000" stroke-width="2"/>
+    </svg>
+     Blood Bank Management System</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">Register</a>
+          <ul class="dropdown">
+            <li><a href="register.html">Donor</a></li>
+            <li><a href="patient.php">Patient</a></li>
+          </ul>
+        </li>
+        <li><a href="blood-bank.html">Blood Banks</a></li>
+        <li><a href="hospital.php">Hospital Requests</a></li>
+        <li><a href="report.php">Reports</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li id="login-css" class="login-btn"><a href="select-role.html">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-bar">
+      <form action="search.php" method="GET">
+        <input type="text" name="query" placeholder="Search by ID, Name or Blood Group" aria-label="Search">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Welcome to the Blood Bank Dashboard</h2>
+      <p>Manage, Donate, Request & Track blood efficiently. Your contribution saves lives!</p>
+      <a class="button" href="select-role.html">Get Started</a>
+    </section>
+
+    <!-- Quick Actions Panel -->
+    <section class="quick-actions">
+      <h3>🔧 Quick Actions</h3>
+      <div class="action-cards">
+        <a href="register.html" class="card">📝 Register Donor</a>
+        <a href="patient.php" class="card">🏥 Register Patient</a>
+        <a href="blood-entry.html" class="card">➕ Add Blood Entry</a>
+        <a href="find-donor.html" class="card">🔍 Find Donor</a>
+        <a href="hospital.php" class="card">🚑 Request Blood</a>
+        <a href="stock-view.php" class="card">📦 View Stock</a>
+      </div>
+    </section>
+
+    <!-- Dashboard Widgets -->
+    <section class="dashboard-widgets">
+      <h3>📊 Live Statistics</h3>
+      <div class="widgets">
+      <div class="widget">👤 Total Donors: <span><?= $donorCount ?></span></div>
+      <div class="widget">🩸 A+ Units: <span><?= $aPlusUnits ?></span></div>
+      <div class="widget">🧪 Samples Analyzed Today: <span><?= $samplesToday ?></span></div>
+      <div class="widget">🏥 Requests Pending: <span><?= $pendingRequests ?></span></div>
+      <div class="widget alert">⚠ O- Units Low: <span><?= $oMinusUnits ?></span></div>
+    </div>
+    </section>
+
+    <!-- Awareness Section -->
+    <section class="awareness">
+      <h3>📣 Blood Donation Awareness</h3>
+      <p>Did you know? A single donation can save up to 3 lives. Make a difference today!</p>
+      <ul>
+        <li>✅ Check eligibility before donating</li>
+        <li>🗓️ Next Blood Camp: May 10, 2025</li>
+      </ul>
+    </section>
+
+    <!-- Optional: Recent Activity Feed
+    <section class="recent-activity">
+      <h3>📃 Recent Activity</h3>
+      <ul>
+        <li>✔ Donor A donated 450ml on April 18</li>
+        <li>✔ Hospital X requested 2 units of B+</li>
+        <li>✔ Sample ID 223 analyzed by Analyst B</li>
+      </ul>
+    </section> -->
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Blood Bank Management System | Developed by Karthik</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

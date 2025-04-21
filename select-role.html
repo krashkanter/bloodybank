@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Role - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .role-container {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #e76f51;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d65a3f;
+    }
+  </style>
+</head>
+<body>
+  <div class="role-container">
+    <h2>🔐 Role-Based Login</h2>
+    <form id="roleForm">
+      <label for="role">Choose your role:</label>
+      <select id="role" required autofocus>
+        <option value="" disabled selected>Select Role</option>
+        <option value="donor">Donor</option>
+        <option value="hospital">Hospital</option>
+        <option value="admin">Admin</option>
+        <option value="patient">Patient</option>
+      </select>
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('roleForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const role = document.getElementById('role').value;
+      if (role) {
+        window.location.href = `login.php?role=${encodeURIComponent(role)}`;
+      } else {
+        alert("Please select a role to proceed.");
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

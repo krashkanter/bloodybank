@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Entry - Blood Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Blood Entry</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="donor.html">Donors</a></li>
+            <li><a href="hospital.php">Hospital</a></li>
+            <li><a href="stock-view.php">Stock</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Blood Entry Form -->
+    <section class="form-section">
+        <h2>Add Blood Stock</h2>
+        <form action="php/add-blood.php" method="POST" class="form-grid">
+            <label for="blood_group">Blood Group:</label>
+            <select id="blood_group" name="blood_group" required>
+                <option value="">--Select--</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+
+            <label for="units">Number of Units:</label>
+            <input type="number" id="units" name="units" min="1" required>
+
+            <label for="source">Source:</label>
+            <select id="source" name="source" required>
+                <option value="">--Select--</option>
+                <option value="Donor">Donor</option>
+                <option value="Purchase">Purchase</option>
+                <option value="Camp">Camp</option>
+            </select>
+
+            <label for="entry_date">Date:</label>
+            <input type="date" id="entry_date" name="entry_date" required>
+
+            <button type="submit">Add to Stock</button>
+        </form>
+    </section>
+
+    <!-- Recent Blood Stock Entries -->
+    <section class="table-section">
+        <h2>Recent Blood Stock Entries</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Blood Group</th>
+                <th>Units</th>
+                <th>Source</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php include("php/fetch-blood-entries.php"); ?>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Blood Bank Management System</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

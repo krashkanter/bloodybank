@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Donor - Blood Bank</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Find a Blood Donor</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="register.html">Register Donor</a></li>
+        <li><a href="patient.php">Register Patient</a></li>
+        <li><a href="stock-view.php">View Stock</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Search Form -->
+    <section class="form-section">
+      <h2>Search Donors</h2>
+      <form action="php/find-donor.php" method="GET" class="form-grid">
+        <label for="name">Name (optional):</label>
+        <input type="text" id="name" name="name">
+
+        <label for="blood_group">Blood Group:</label>
+        <select id="blood_group" name="blood_group">
+          <option value="">--Any--</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+
+        <label for="location">Location (City/Area):</label>
+        <input type="text" id="location" name="location">
+
+        <button type="submit">🔍 Search</button>
+      </form>
+    </section>
+
+    <!-- Donor Results -->
+    <section class="table-section">
+      <h2>Matching Donors</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Donor ID</th>
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Contact</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php include("php/find-donor.php"); ?>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Blood Bank Management System</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
